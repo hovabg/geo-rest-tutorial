@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  geoserver:
+    image: geoserver
+    build: ./geoapp
+    tty: true
+    container_name: geoapp
+    volumes:
+    - ./../:/workspace/
+    ports:
+      - "8000:8000"
+  geodb:
+    image: kartoza/postgis:15-3.3
+    restart: always
+    environment:
+      - POSTGRES_DB=gis
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_MULTIPLE_EXTENSIONS=postgis,hstore,postgis_topology,postgis_raster,pgrouting
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgis-data:/var/lib/postgresql
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+  postgis-data:

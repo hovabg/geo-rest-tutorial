@@ -1,40 +1,41 @@
-# Rest GIS api
+# GIS REST API
 
-Small tutorial on how to configure and create a rest api with django rest framework with geometry fields
+A brief tutorial on how to create and configure a REST API using GeoDjango and Django REST framework with geospatial components. This guide aims to provide a quick and basic introduction to building a geospatial REST API.
 
 ## Getting Started
 
-The first thing to keep in mind is that we will be using geodjango and django rest framework, therefore it is necessary to know how to use django and django rest framework
+Before we dive in, make sure you're familiar with Django and Django REST framework. We'll be using these frameworks, along with GeoDjango, to build our geospatial REST API.
 
-To start you need to install:
- -django
- -djangorestframework
- -djangorestframework-gis
- -gdal
- -proj
- -geos
- -psycopg2
+To get started, install the following packages:
+- Django
+- Django REST framework
+- Django REST framework GIS
+- GDAL
+- PROJ
+- GEOS
+- psycopg2
 
 ### Prerequisites
 
-Using libraries like gdal, which are complicated to install on Windows, is the use of docker which makes it much easier. So if you have docker installed, in the repository you will find what you need to build the container.
-
+Installing libraries like GDAL on Windows can be complex. To simplify the process, we recommend using Docker. If you have Docker installed, you can find the necessary Dockerfile and build instructions in the repository.
 
 ### Installing
 
-First step: Use cmd for create a docker container in the yml path you have to execute this command
+Navigate to the project directory: Open your terminal or command prompt and navigate to the directory where your project files are located.
+
+Start the container: Run the following command to build and start the Docker container (this may take a while):
 
 ```
+docker-compose build
 docker-compose up -d
 ```
-
-that take a time, so after finish the process, enter  next command for use the container
+Enter the container: Once the container is running, use the following command to enter a bash shell within the container:
 
 ```
 docker exec -it geoapp bash
 ```
 
-Now you only have to run the django server in order to take a look the example:
+Run the Django server: Inside the container, execute the following command to start the Django development server in order to take a look the example:
 
 ```
 python manage.py runserver 
@@ -190,16 +191,11 @@ If something doesn't make sense or is wrong, please let me know! Constructive fe
 
 ## Authors
 
-* **Hovannes Borras Gurlekian** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Hovannes Borras Gurlekian** - [HovaBg](https://github.com/hovabg)
 
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
 
