@@ -1,9 +1,8 @@
 Idioma:  [ESP](ESP.md) | [EN](README.md)
 
-# GIS REST API
+# API REST geoespacial
 
-Tutorial básico para crear una API REST geoespacial con GeoDjango y Django REST framework.
-Este tutorial te guiará a través de los pasos iniciales para construir una API REST que maneje datos geográficos, utilizando GeoDjango y Django REST framework. 
+En este tutorial, se explican los pasos iniciales para construir una API REST que maneje datos geográficos utilizando GeoDjango y Django REST Framework. A lo largo del proceso, se cubrirán desde la configuración básica hasta la implementación de funcionalidades clave para gestionar y consultar datos espaciales, ideal para quienes están comenzando a explorar el mundo de las aplicaciones geoespaciales.
 
 ## ¡Manos a la obra!
 
