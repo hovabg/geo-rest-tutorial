@@ -1,4 +1,4 @@
-Idioma: :[ESP](ESP.md)|[EN](README.md)
+Idioma: :[ESP](ESP.md) | [EN](README.md)
 
 # GIS REST API
 
@@ -35,7 +35,7 @@ Solo necesitas tener Docker instalado. Descarga e instala Docker desde [enlace p
 
 ### Instalacion
 
-Navega al directorio del proyecto: Abre una terminal o línea de comandos en la carpeta donde se encuentra este archivo README.md (o donde esté ubicado tu archivo de configuración).
+Navega al directorio del proyecto: Abre una terminal o línea de comandos en la carpeta donde se encuentra este archivo ```README.md``` (o donde esté ubicado tu archivo de configuración).
 
 Construye e inicia el contenedor Docker: Ejecuta los siguientes comandos para construir la imagen de Docker y luego iniciar un contenedor a partir de ella:
 
@@ -60,11 +60,11 @@ python manage.py runserver
 
 Empecemos a constuir nuestro proyecto, partiendo de que tanto el proyecto como la  app de django estan ya creados.
 
-### I Configuración del Proyecto
+### I: Configuración del Proyecto
 
 #### INSTALLED_APPS
 
-Para habilitar las funcionalidades de GeoDjango y Django REST framework, debemos agregar las siguientes aplicaciones a la lista INSTALLED_APPS en nuestro archivo settings.py:
+Para habilitar las funcionalidades de GeoDjango y Django REST framework, debemos agregar las siguientes aplicaciones a la lista ```INSTALLED_APPS``` en nuestro archivo ```settings.py```:
 
 ```
 INSTALLED_APPS = [
@@ -82,9 +82,9 @@ INSTALLED_APPS = [
 
 #### Database
 
-Para aprovechar al máximo las capacidades de GeoDjango, recomendamos utilizar PostgreSQL con la extensión PostGIS. Configura la base de datos en tu archivo ```settings.py``` de la siguiente manera:
+Para aprovechar al máximo las capacidades de GeoDjango, recomendamos utilizar PostgreSQL con la extensión ```PostGIS```. Configura la base de datos en tu archivo ```settings.py``` de la siguiente manera:
 
-Example:
+Ejemplo:
 
 ```
 DATABASES = {
@@ -98,7 +98,7 @@ DATABASES = {
     }
 }
 ```
-- ENGINE: Especifica el motor de base de datos a utilizar. En este caso, django.contrib.gis.db.backends.postgis indica que usaremos PostgreSQL con PostGIS.
+- ENGINE: Especifica el motor de base de datos a utilizar. En este caso, ```django.contrib.gis.db.backends.postgis``` indica que usaremos PostgreSQL con PostGIS.
 
 Nota: Asegúrate de que la base de datos y la extensión PostGIS estén creadas y configuradas correctamente en tu sistema o en tu entorno Docker. Si estás utilizando Docker, las credenciales y configuración de la base de datos suelen estar definidas en el archivo ```docker-compose.yml```.
 
@@ -184,7 +184,7 @@ Para gestionar las URL de nuestra API de manera eficiente, utilizaremos el méto
 
 Ejemplo:
 
-En el archivo ``urls.py``` de nuestra aplicación (por ejemplo, geo/urls.py), configuraremos las rutas de la siguiente manera:
+En el archivo ```urls.py``` de nuestra aplicación (por ejemplo, geo/urls.py), configuraremos las rutas de la siguiente manera:
 
 ```
 from django.urls import path, include
