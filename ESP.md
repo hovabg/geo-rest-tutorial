@@ -1,4 +1,4 @@
-Idioma: :[ESP](ESP.md) | [EN](README.md)
+Idioma:  [ESP](ESP.md) | [EN](README.md)
 
 # GIS REST API
 
@@ -128,9 +128,12 @@ class Restaurant(models.Model):
 
 Otros tipos de campos geográficos:
 
-- PointField: Para representar un solo punto.
-- LineStringField: Para representar una línea.
-- PolygonField: Para representar un polígono.
+- PointField: Para representar un solo punto, como un hospital.
+- LineStringField: Para representar una línea, como rios o carreteras.
+- PolygonField: Para representar un polígono, como un pais o construir footprint's.
+- MultiPointField: Para represnetar multiples puntos en una sola geometria.
+- MultiLineStringField: Para represnetar multiples lineas.
+- MultiPolygonField: Para represnetar multiples poligonos.
 
 
 ### III: Creacion de Serializers

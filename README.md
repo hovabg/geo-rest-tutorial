@@ -1,4 +1,4 @@
-Language:[ESP](ESP.md) | [EN](README.md)
+Language: [ESP](ESP.md) | [EN](README.md)
 
 # GIS REST API
 
@@ -112,6 +112,7 @@ class Restaurant(models.Model):
 
 Other available geographic field types:
 
+- PointField: Represents a point feature, such as a hospital.
 - LineStringField: Represents a linear feature, such as a road or river.
 - PolygonField: Represents a polygonal area, such as a country or a building footprint.
 - MultiPointField: Represents multiple points in a single geometry.
