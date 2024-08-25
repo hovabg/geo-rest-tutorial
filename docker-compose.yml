@@ -2,7 +2,7 @@ version: '3.3'
 services:
   geoserver:
     image: geoserver
-    build: ./geoapp
+    build: ./docker
     tty: true
     container_name: geoapp
     volumes:

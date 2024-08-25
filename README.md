@@ -1,10 +1,12 @@
+Language:[ESP](ESP.md)|[EN](README.md)
+
 # GIS REST API
 
 A brief tutorial on how to create and configure a REST API using GeoDjango and Django REST framework with geospatial components. This guide aims to provide a quick and basic introduction to building a geospatial REST API.
 
 ## Getting Started
 
-Before we dive in, make sure you're familiar with Django and Django REST framework. We'll be using these frameworks, along with GeoDjango, to build our geospatial REST API.
+Before we dive in, make sure you're familiar with Docker, Django and Django REST framework. We'll be using these frameworks, along with GeoDjango, to build our geospatial REST API.
 
 To get started, install the following packages:
 - Django
@@ -54,19 +56,11 @@ Let's begin building our project from the ground up. We'll assume you have a Dja
 
 ```
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # Add contrib gis for use geodjango.
-    'django.contrib.gis',
-    # Add rest and rest_gis for create a geo api's
-    'rest_framework',
-    'rest_framework_gis',
-    # Your app
-    'geo',
+    # ... ...
+    'django.contrib.gis',  
+    'resrt_framework',
+    'rest_framework_gis',  
+    'geo',  
 ]
 ```
 
@@ -127,14 +121,35 @@ class RestaurantSerializer(GeoFeatureModelSerializer):
         geo_field = 'ppoly'
 
 ```
+### IV: Views
 
-### IV: Urls
+With our model (Restaurant) and its corresponding Serializer (RestaurantSerializer) in place, we're ready to integrate these components into a view for our REST API.
 
-To manage our API's URLs, we'll use the router method provided by rest_framework.routers. This will simplify the URL configuration process.
+We'll use a ModelViewSet, provided by Django REST Framework, which will handle the CRUD operations on restaurants automatically. This way, we can create a functional REST API with minimal code.
+
+Example:
+
+```
+from rest_framework import viewsets
+from .models import Restaurant
+from .serializers import RestaurantSerializer
+
+
+# Create your views here.
+class RestaurantViewSet(viewsets.ModelViewSet):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+
+```
+
+### V: Urls
+
+To efficiently manage our API's URLs, we'll use the router method provided by Django REST Framework. This approach significantly simplifies URL configuration, especially when dealing with multiple resources.
 
 Example: 
 
-'name-app'/urls.py
+In our app's urls.py file (for example, geo/urls.py), we'll configure the routes as follows:
 
 ```
 from django.urls import path, include
@@ -150,7 +165,7 @@ urlpatterns = [
 ]
 ```
 
-'proyect'/urls.py
+In our project's main urls.py file (for example, proyect/urls.py), we'll include the URLs of our app:
 
 ```
 from django.urls import path, include
@@ -160,9 +175,11 @@ urlpatterns = [
 ]
 ```
 
-###  Optional, V: Admin
+###  Optional, VI: Admin
 
-If you want to have geospatial control over the data uploaded through your API, GeoDjango provides a convenient way to achieve this. Simply add the following configuration to your app's admin.py file.
+To have a visual and geographic control over the data uploaded and managed through our API, GeoDjango provides us with a simple way to integrate a map into the admin panel. This will allow us to visualize the geographic location of each record.
+
+To enable this functionality, we just need to make a small modification in our app's admin.py file:
 
 ```
 from django.contrib import admin
@@ -174,7 +191,6 @@ from .models import Restaurant
 admin.site.register(Restaurant, GISModelAdmin)
 ```
 
-This will allow us to see uploaded fields and their locations on a map within the server's admin panel.
 
 
 ## Discover more in the documentation!
@@ -187,7 +203,7 @@ This will allow us to see uploaded fields and their locations on a map within th
 
 Want to help improve the tutorial? Let me know!
 
-If something doesn't make sense or is wrong, please let me know! Constructive feedback is always appreciated.
+Do you think something is missing from this tutorial? Is there any concept that's not clear? Let me know! Your feedback will help to create an even better and more comprehensive tutorial.
 
 ## Authors
 
