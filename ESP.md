@@ -217,7 +217,7 @@ urlpatterns = [
 
 Para tener un control visual y geográfico de los datos cargados a través de nuestra API, GeoDjango nos ofrece una forma sencilla de integrar un mapa en el panel de administración. Esto nos permitirá visualizar la ubicación geográfica de cada registro.
 
-Para habilitar esta funcionalidad, solo necesitamos realizar una pequeña modificación en el archivo ``admin.py``` de nuestra aplicación:
+Para habilitar esta funcionalidad, solo necesitamos realizar una pequeña modificación en el archivo ```admin.py``` de nuestra aplicación:
 
 ```
 from django.contrib import admin
