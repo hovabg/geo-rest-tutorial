@@ -50,11 +50,11 @@ python manage.py runserver
 
 Let's begin building our project from the ground up. We'll assume you have a Django project and app already set up.
 
-###  I: Let's configure our project settings, specifically INSTALLED_APPS and DATABASES.
+###  I: Let's configure our project settings.
 
 #### INSTALLED_APPS
 
-To enable GeoDjango and Django REST framework functionalities, we need to add the following apps to the ```INSTALLED_APPS``` list in our ```settings.py`` file:
+To enable GeoDjango and Django REST framework functionalities, we need to add the following apps to the ```INSTALLED_APPS``` list in our ```settings.py``` file:
 
 ```
 INSTALLED_APPS = [
@@ -67,9 +67,9 @@ INSTALLED_APPS = [
 ```
 
 #### Database 
-For optimal performance and a wide range of geospatial functionalities, we recommend using PostgreSQL with the ```PostGIS`` extension. This combination provides a robust and scalable solution for storing and querying geographic data.
+For optimal performance and a wide range of geospatial functionalities, we recommend using PostgreSQL with the ```PostGIS``` extension. This combination provides a robust and scalable solution for storing and querying geographic data.
 
-To configure your Django project to use PostgreSQL and PostGIS, update your ```settings.py`` file as follows:
+To configure your Django project to use PostgreSQL and PostGIS, update your ```settings.py``` file as follows:
 
 Example:
 
@@ -88,7 +88,7 @@ DATABASES = {
 
 - ENGINE: Specifies the database engine to use. In this case, ```django.contrib.gis.db.backends.postgis``` indicates that we will be using PostgreSQL with PostGIS.
 
-Note: Make sure that your PostgreSQL database is running and that the PostGIS extension is enabled. If you're using Docker, consult your ```docker-compose.yml`` file for the specific database configuration.
+Note: Make sure that your PostgreSQL database is running and that the PostGIS extension is enabled. If you're using Docker, consult your ```docker-compose.yml``` file for the specific database configuration.
 
 ### II: Model creation
 
@@ -201,7 +201,7 @@ urlpatterns = [
 
 To have a visual and geographic control over the data uploaded and managed through our API, GeoDjango provides us with a simple way to integrate a map into the admin panel. This will allow us to visualize the geographic location of each record.
 
-To enable this functionality, we just need to make a small modification in our app's ``admin.py``` file:
+To enable this functionality, we just need to make a small modification in our app's ```admin.py``` file:
 
 ```
 from django.contrib import admin
