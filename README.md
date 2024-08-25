@@ -1,6 +1,6 @@
 Language: [ESP](ESP.md) | [EN](README.md)
 
-# GIS REST API
+# Geospatial REST API
 
 A brief tutorial on how to create and configure a REST API using GeoDjango and Django REST framework with geospatial components. This guide aims to provide a quick and basic introduction to building a geospatial REST API.
 
